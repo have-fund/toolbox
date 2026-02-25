@@ -2,12 +2,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "lint": "eslint",
     "build": "vite build",
     "ts": "vue-tsc --noemit",
-    "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@noble/secp256k1": "^3.0.0",
+    "ethers": "^6.16.0",
+    "uint8array-extras": "^1.5.0",
     "vue": "^3.5.28",
     "vue-router": "^5.0.2"
   },

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-//
-</script>
-
 <template>
-  <div>Main Page</div>
+  <router-link :to="{ name: 'encrypt' }">Encrypt page</router-link>
 </template>
