@@ -18,14 +18,6 @@ const { address, publicKey, sourceText, copyResult, encryptionUnavailable } =
   </label>
 
   <div>{{ address }}</div>
-
-  <textarea
-    v-model="sourceText"
-    name="source-text"
-    cols="30"
-    rows="10"
-    placeholder="Enter text"
-  />
-
+  <textarea v-model="sourceText" name="source-text" placeholder="Enter text" />
   <button :disabled="encryptionUnavailable" @click="copyResult">Copy</button>
 </template>

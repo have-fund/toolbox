@@ -1,4 +1,5 @@
 const encoder = new TextEncoder()
+const decoder = new TextDecoder()
 
 const importAesKey = async (rawKey: Uint8Array) => {
   if (rawKey.length !== 32) {
@@ -39,4 +40,23 @@ export const encryptString = async (
       encoder.encode(source),
     ),
   )
+}
+
+export const decryptString = async (
+  source: Uint8Array,
+  key: Uint8Array,
+  iv: Uint8Array,
+  ephemeralPubkey: Uint8Array,
+) => {
+  const aesKey = await importAesKey(key)
+
+  const decrypted = new Uint8Array(
+    await crypto.subtle.decrypt(
+      getAesAlgorithm(iv, ephemeralPubkey),
+      aesKey,
+      source as BufferSource,
+    ),
+  )
+
+  return decoder.decode(decrypted)
 }
