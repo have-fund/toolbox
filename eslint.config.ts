@@ -31,6 +31,12 @@ export default defineConfig(
     },
   },
   {
+    // common
+    rules: {
+      'prefer-template': 2,
+    },
+  },
+  {
     // prettier
     rules: {
       'prettier/prettier': 2,
@@ -48,6 +54,10 @@ export default defineConfig(
     rules: {
       'perfectionist/sort-objects': [2, { order: 'asc', type: 'line-length' }],
       'perfectionist/sort-interfaces': [
+        2,
+        { order: 'asc', type: 'line-length' },
+      ],
+      'perfectionist/sort-named-imports': [
         2,
         { order: 'asc', type: 'line-length' },
       ],
